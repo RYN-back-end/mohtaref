@@ -17,7 +17,7 @@ if (isset($_POST['qty'])) {
     }
 
     $selectPrev = "SELECT * FROM `cart` WHERE `user_id`='{$_SESSION['user']['id']}' AND `product_id`='{$selectProductsRow['id']}'";
-    if (runQuery($selectPrev)->num_rows > 1) {
+    if (runQuery($selectPrev)->num_rows > 0) {
         $insertSql = "UPDATE `cart` SET `qty` = '{$_POST['qty']}' WHERE `user_id`='{$_SESSION['user']['id']}' AND `product_id`='{$selectProductsRow['id']}'";
     } else {
         $insertSql = "INSERT INTO cart (user_id, product_id,qty) Values ('{$_SESSION['user']['id']}','{$selectProductsRow['id']}','{$_POST['qty']}')";

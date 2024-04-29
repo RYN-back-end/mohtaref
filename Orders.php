@@ -85,14 +85,35 @@ require_once 'layout/inc/header.php'
 <section class="company" style="height: 110vh">
     <div class="container">
         <div class="main-heading"><p class="title"> الطلبات</p></div>
+
+        <?php
+        if (isset($_GET['error'])) {
+            ?>
+            <div class="alert alert-danger" role="alert" style="text-align: right">
+                <?php echo $_GET['error']; ?>
+                <button type="button" style="float: left" class="close" data-bs-dismiss="alert"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php
+        }
+        if (isset($_GET['success'])) {
+            ?>
+            <div class="alert alert-success" role="alert" style="text-align: right">
+                <?php echo $_GET['success']; ?>
+                <button type="button" style="float: left" class="close" data-bs-dismiss="alert"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php
+        }
+        ?>
         <table>
             <thead>
             <tr>
                 <td>رقم الطلب</td>
-                <!--   <td> اسم المحل</td> -->
-                <td> اسم العميل</td>
-                <!--    <td> اسم المنتج</td> -->
-                <!--   <td> الكمية المطلوبة</td> -->
                 <td>تاريخ الطلب</td>
                 <td>السعر الاجمالي</td>
 
@@ -104,36 +125,11 @@ require_once 'layout/inc/header.php'
             <?php
             if ($selectAllOrdersResult->num_rows > 0) {
                 while ($row = $selectAllOrdersResult->fetch_assoc()) {
-                    $selectUserSql = "SELECT * from users WHERE id = '{$row["user_id"]}'";
-                    $selectUserResult = runQuery($selectUserSql);
-                    /*  $select_order_details_Sql = "SELECT order_details.qty, order_details.price, order_details.total,
-                      order_details.status , products.title as product, professionals.title as professional , orders.id
-                      FROM order_details, products, professionals , orders
-                      WHERE order_details.product_id = products.id and
-                      order_details.professional_id= professionals.id AND
-                      order_details.order_id = orders.id and orders.id = '{$row["id"]}'";
-                      $select_order_details_result = runQuery($select_order_details_Sql);
 
-
-                      $status = '';
-                      if ($row['status'] == 'new')
-                      {
-                          $status = 'طلب جديد';
-                      }elseif ($row['status'] == 'accepted')
-                      {
-                          $status = '<i class="fa-solid fa-circle-check correct"></i> تم القبول';
-                      }elseif ($row['status'] == 'refused')
-                      {
-                          $status = 'تم الرفض';
-                      }else{
-                          $status = '<i class="fa-solid fa-circle-check correct"></i> تم التسليم';
-                      }
-                      */
                     ?>
                     <tr>
                         <td class="name-user"><?php echo $row['id'] ?></td>
 
-                        <td class="number-user"> <?php echo $selectUserResult->fetch_assoc()['name'] ?? '' ?></td>
 
 
                         <td class="number-user"> <?php echo $row['date'] ?></td>
