@@ -1,0 +1,1044 @@
+.row {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.justify-center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.gap-1 > * {
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.gap-1 {
+    margin-left: -10px;
+    margin-right: -10px
+}
+
+@media (min-width: 567px) {
+    .col-12-sm {
+        -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        flex-grow: 0;
+        width: 100%
+    }
+}
+
+@media (min-width: 768px) {
+    .col-6-md {
+        width: 50%
+    }
+
+    .col-6-md, .col-8-md {
+        -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        flex-grow: 0
+    }
+
+    .col-8-md {
+        width: 66.6666666667%
+    }
+}
+
+@media (min-width: 992px) {
+    .col-4-lg {
+        -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        flex-grow: 0;
+        width: 33.3333333333%
+    }
+}
+
+@media (max-width: 567px) {
+    .col-12-sm {
+        -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        flex-grow: 0;
+        width: 100%
+    }
+}
+
+.container-full {
+    max-width: 100%
+}
+
+.container, .container-full {
+    margin: 0 auto;
+    padding: 0 15px
+}
+
+.container {
+    max-width: 1200px
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 0 15px
+    }
+}
+
+@media (min-width: 567px) {
+    .container {
+        max-width: 540px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px
+    }
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+* {
+    direction: rtl;
+    font-family: Almarai;
+    font-size: inherit;
+    margin: 0;
+    padding: 0
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Almarai;
+    src: url(../assets/webfonts/Almarai-Regular.woff2), url(../assets/webfonts/Almarai-Bold.woff2)
+}
+
+body {
+    background-color: #fff;
+    overflow-x: hidden
+}
+
+ul li {
+    list-style: none
+}
+
+a {
+    display: inline-block;
+    text-decoration: none
+}
+
+button {
+    height: unset
+}
+
+.company .button, .home-offer .button, .model-book .book .button, .setting-admin .button, table tbody .delete {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+.company .button:hover, .home-offer .button:hover, .model-book .book .button:hover, .setting-admin .button:hover, table tbody .delete:hover {
+    background-color: white
+}
+
+header .responsive .icon-menu {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 50px
+}
+
+header .responsive .icon-menu span {
+    background-color: #27496d;
+    border-radius: 50px;
+    height: 4px;
+    position: absolute;
+    -webkit-transition: .2s linear;
+    transition: .2s linear;
+    width: 40px
+}
+
+header .responsive .icon-menu span:first-child {
+    top: 10px
+}
+
+header .responsive .icon-menu span:nth-child(2) {
+    top: 20px
+}
+
+header .responsive .icon-menu span:nth-child(3) {
+    top: 30px
+}
+
+header .responsive .active.icon-menu span:first-child {
+    top: 50%;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+header .responsive .active.icon-menu span:nth-child(2) {
+    opacity: 0;
+    top: 20px;
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px)
+}
+
+header .responsive .active.icon-menu span:nth-child(3) {
+    top: 50%;
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg)
+}
+
+header .normal .nav-links .drop-down-2, header .normal .user-after-login .drop-down, header .responsive .drop-down {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 10px rgba(20, 40, 80, .1);
+    box-shadow: 0 0 10px rgba(20, 40, 80, .1);
+    display: none;
+    left: -15px;
+    position: absolute;
+    top: 7.5vh;
+    width: 150px
+}
+
+header .normal .nav-links .drop-down-2 ul, header .normal .user-after-login .drop-down ul, header .responsive .drop-down ul {
+    padding: 3vh 1.5vh
+}
+
+header .normal .nav-links .drop-down-2 ul li, header .normal .user-after-login .drop-down ul li, header .responsive .drop-down ul li {
+    padding-bottom: 3vh
+}
+
+header .normal .nav-links .drop-down-2 ul li a, header .normal .user-after-login .drop-down ul li a, header .responsive .drop-down ul li a {
+    color: #27496d;
+    font-size: 1rem;
+    font-weight: 300;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+header .normal .nav-links .drop-down-2 ul li a i, header .normal .user-after-login .drop-down ul li a i, header .responsive .drop-down ul li a i {
+    padding-left: 1vh
+}
+
+header .normal .nav-links .drop-down-2 ul li a:hover, header .normal .user-after-login .drop-down ul li a:hover, header .responsive .drop-down ul li a:hover {
+    color: #00a8cc;
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px)
+}
+
+header .normal .nav-links .drop-down-2 ul li:last-child, header .normal .user-after-login .drop-down ul li:last-child, header .responsive .drop-down ul li:last-child {
+    padding-bottom: 0
+}
+
+header .normal .nav-links .nav-items i.flip, header .normal .user-after-login .user-name i.flip {
+    color: #0c7b93;
+    padding-left: 5px;
+    padding-right: 0;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.company .company-card, .company .products-card {
+    background-color: #fff;
+    border-radius: 12px;
+    -webkit-box-shadow: 0 0 10px rgba(20, 40, 80, .1);
+    box-shadow: 0 0 10px rgba(20, 40, 80, .1);
+    margin-bottom: 3vh;
+    padding: 10px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+.company .company-card:hover, .company .products-card:hover {
+    -webkit-box-shadow: 0 0 10px rgba(20, 40, 80, .2);
+    box-shadow: 0 0 10px rgba(20, 40, 80, .2);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+}
+
+.company .company-card:hover .company-img img, .company .products-card:hover .company-img img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+}
+
+.company .company-card:hover .details-company .name, .company .products-card:hover .details-company .name {
+    color: #ACE1AF
+}
+
+.company .company-card .company-img, .company .products-card .company-img {
+    border-radius: 8px;
+    height: 50%;
+    overflow: hidden;
+    width: 100%
+}
+
+.company .company-card .company-img img, .company .products-card .company-img img {
+    border-radius: 8px;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+    width: 100%
+}
+
+.company .company-card .details-company, .company .products-card .details-company {
+    padding: 2vh 0
+}
+
+.company .company-card .details-company .name, .company .products-card .details-company .name {
+    color: #004526;
+    font-size: 1.4rem;
+    font-weight: 800;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+.company .company-card .details-company .company-logo, .company .products-card .details-company .company-logo {
+    height: 40px;
+    width: 40px
+}
+
+.company .company-card .details-company .company-logo img, .company .products-card .details-company .company-logo img {
+    border-radius: 50%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%
+}
+
+.company .company-card .button, .company .products-card .button {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between
+}
+
+.company .company-card .button button, .company .products-card .button button {
+    background-color: #004526;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+.company .company-card .button button:hover, .company .products-card .button button:hover {
+    background-color: #ACE1AF
+}
+
+.company .company-card .button .danger, .company .products-card .button .danger {
+    background-color: #cd2121
+}
+
+.company .company-card .button .danger:hover, .company .products-card .button .danger:hover {
+    background-color: #ff1616
+}
+
+.company .button, .home-offer .button, .model-book .book .button, .setting-admin .button, table tbody .delete {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center
+}
+
+.company .button button, .home-offer .button button, .model-book .book .button button, .setting-admin .button button, table tbody .delete button {
+    background-color: #004526;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+.company .button button:hover, .home-offer .button button:hover, .model-book .book .button button:hover, .setting-admin .button button:hover, table tbody .delete button:hover {
+    background-color: #ACE1AF
+}
+
+table tbody .delete .danger {
+    background-color: #cd2121
+}
+
+table tbody .delete .danger:hover {
+    background-color: #ff1616
+}
+
+header {
+    background-color: #f4f4f4;
+    -webkit-box-shadow: 0 0 1.25rem rgba(20, 40, 80, .1);
+    box-shadow: 0 0 1.25rem rgba(20, 40, 80, .1);
+    position: relative;
+    width: 100%;
+    z-index: 9999
+}
+
+header.scroll {
+    -webkit-animation: sticky .5s linear;
+    animation: sticky .5s linear;
+    -webkit-box-shadow: 0 0 1.25rem rgba(20, 40, 80, .15);
+    box-shadow: 0 0 1.25rem rgba(20, 40, 80, .15);
+    position: fixed;
+    top: 0
+}
+
+header .normal {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	background:#AFE1AF;
+    justify-content: space-between;
+    padding: 12px 0
+}
+
+@media (max-width: 768px) {
+    header .normal {
+        display: none
+    }
+}
+
+header .normal.scroll {
+    padding: 8px 0
+}
+
+header .normal.scroll .logo img {
+    width: 60px
+}
+
+header .normal .logo img {
+    height: 48px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 80px
+}
+
+header .normal .nav-links {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+header .normal .nav-links .nav-items {
+    padding-right: 5vh;
+    position: relative
+}
+
+header .normal .nav-links .nav-items:first-child {
+    padding-right: 0
+}
+
+header .normal .nav-links .nav-items i {
+    font-size: .9rem;
+    padding-right: 5px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+header .normal .nav-links .nav-items a {
+    color: #142850;
+    font-size: 1.1rem;
+    font-weight: 800;
+    position: relative;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+header .normal .nav-links .nav-items a.active, header .normal .nav-links .nav-items a:hover {
+    color: #0c7b93
+}
+
+header .normal .nav-links .drop-down-2 {
+    left: 33px;
+    top: 5.5vh;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 130px
+}
+
+header .normal .user-after-login {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative
+}
+
+header .normal .user-after-login .user-img {
+    height: 50px;
+    width: 50px
+}
+
+header .normal .user-after-login .user-img img {
+    border: 1px solid #00a8cc;
+    border-radius: 50%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%
+}
+
+header .normal .user-after-login .user-name {
+    color: #27496d;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding-right: 1.5vh;
+    position: relative
+}
+
+header .normal .user-after-login .user-name i {
+    font-size: 1rem;
+    padding-right: 5px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+header .responsive {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0
+}
+
+@media (min-width: 768px) {
+    header .responsive {
+        display: none
+    }
+}
+
+header .responsive .user-after-login {
+    position: relative
+}
+
+header .responsive .logo img {
+    height: 48px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 70px
+}
+
+header .responsive .user-img {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 50px;
+    position: relative;
+    width: 50px
+}
+
+header .responsive .user-img img {
+    border: 1px solid #0c7b93;
+    border-radius: 50%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%
+}
+
+header .responsive .drop-down {
+    left: 0;
+    top: 8.5vh
+}
+
+header .responsive .drop-down:before {
+    border: 8px solid transparent;
+    border-bottom-color: #0c7b93;
+    content: "";
+    left: 15px;
+    position: absolute;
+    top: -16px
+}
+
+header .responsive .links-res {
+    background-color: #f4f4f4;
+    -webkit-box-shadow: 0 10px 15px rgba(38, 38, 38, .1);
+    box-shadow: 0 10px 15px rgba(38, 38, 38, .1);
+    display: none;
+    height: 35vh;
+    position: absolute;
+    right: 0;
+    top: 74px;
+    width: 100%
+}
+
+header .responsive .links-res ul {
+    padding: 3vh 5vh
+}
+
+header .responsive .links-res ul li {
+    padding-top: 4vh
+}
+
+header .responsive .links-res ul li a {
+    color: #27496d;
+    font-size: 1.2rem;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out
+}
+
+header .responsive .links-res ul li a:hover {
+    color: #00a8cc;
+    -webkit-transform: translateX(-15px);
+    transform: translateX(-15px)
+}
+
+@-webkit-keyframes sticky {
+    0% {
+        top: -100px
+    }
+    to {
+        top: 0
+    }
+}
+
+@keyframes sticky {
+    0% {
+        top: -100px
+    }
+    to {
+        top: 0
+    }
+}
+
+.home-offer {
+    background: white;
+    background: white;
+    min-height: 100vh;
+    padding-top: 10vh;
+    width: 100%
+}
+
+.home-offer .owl-stage-outer {
+    padding: 5vh 0
+}
+
+.home-offer .button {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+}
+
+.main-heading {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 8vh
+}
+
+.main-heading .title {
+    color: #004526;
+    font-size: 2.5rem;
+    padding: 2vh;
+    position: relative
+}
+
+.main-heading .title:after, .main-heading .title:before {
+    content: "";
+    height: 30px;
+    position: absolute;
+    width: 30px
+}
+
+.main-heading .title:before {
+   
+    left: 0;
+    top: 0
+}
+
+.main-heading .title:after {
+   
+    bottom: 0;
+    right: 0
+}
+
+@-webkit-keyframes rotate_360 {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes rotate_360 {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+.company {
+    background:white;
+    background: white;
+    min-height: 100vh;
+    padding-bottom: 5vh;
+    padding-top: 10vh;
+    width: 100%
+}
+
+.company .company-card .danger {
+    background-color: #cd2121
+}
+
+.company .company-card .danger:hover {
+    background-color: #ff1616
+}
+
+.company .products-card .details-company {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+}
+
+.company .products-card .details-company .name {
+    margin-right: 5px
+}
+
+.company .products-card .button {
+    margin: 1vh 0
+}
+
+.company .button {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 3vh 0
+}
+
+table {
+    height: 100%;
+    overflow-x: scroll;
+    width: 100%
+}
+
+table td {
+    padding: 1.5vh 1.2vh
+}
+
+table thead {
+    background-color: #AFE1AF;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 800;
+    height: 7vh;
+    text-align: center
+}
+
+table tbody {
+    background-color: #d2d2d2;
+    text-align: center
+}
+
+table tbody td {
+    color: #27496d;
+    font-size: 1.2rem;
+    font-weight: 600
+}
+
+table tbody .details-shop {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center
+}
+
+table tbody .details-shop img {
+    border-radius: 50%;
+    height: 50px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 50px
+}
+
+table tbody .details-shop .name {
+    color: #27496d;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-right: 10px
+}
+
+table tbody .stats i {
+    padding-right: 5px
+}
+
+table tbody .stats .correct {
+    color: #21cd32
+}
+
+table tbody .massage {
+    font-size: 1rem;
+    line-height: 1.8
+}
+
+table tbody .delete .danger {
+    font-size: 1rem;
+    padding: 5px 10px
+}
+table tbody .delete .success {
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.setting-admin .img-present {
+    height: 100%;
+    margin: 0 auto;
+    width: 300px
+}
+
+.setting-admin .img-present img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%
+}
+
+.setting-admin .model-setting {
+    height: 100%;
+    margin-top: 5vh;
+    padding: 0 5vh;
+    width: 100%
+}
+
+.setting-admin .model-setting .book-input {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    margin-bottom: 5vh;
+    width: 100%
+}
+
+.setting-admin .model-setting .book-input label {
+    color: #27496d;
+    font-size: 1.3rem;
+    font-weight: 800;
+    width: 28%
+}
+
+.setting-admin .model-setting .book-input input {
+    background-color: transparent;
+    border: 1px solid silver;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-size: 1rem;
+    height: 48px;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+    width: 100%;
+    width: 70%
+}
+
+.setting-admin .model-setting .book-input input:focus {
+    outline: 0
+}
+
+.setting-admin .button {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.model-book {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10001
+}
+
+.model-book .book {
+    background-color: #fff;
+    border-radius: 10px;
+    left: 50%;
+    max-width: 100%;
+    min-height: 50vh;
+    padding: 3vh 5vh;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 500px
+}
+
+.model-book .book p {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    color: #27496d;
+    font-size: 2rem;
+    font-weight: 800;
+    justify-content: center;
+    padding-bottom: 8vh
+}
+
+.model-book .book .book-input, .model-book .book p {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.model-book .book .book-input {
+    margin-bottom: 3vh;
+    width: 100%
+}
+
+.model-book .book .book-input label {
+    color: #142850;
+    font-size: 1.3rem;
+    padding-bottom: 2vh;
+    padding-left: 1vh;
+    width: 145px
+}
+
+.model-book .book .book-input input {
+    background-color: transparent;
+    border: 1px solid silver;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    height: 48px;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
+    width: 100%;
+    width: 50%
+}
+
+.model-book .book .book-input input:focus {
+    border: 1px solid #0c7b93;
+    outline: 0
+}
+
+.model-book .book .button {
+    padding-top: 2vh
+}
+
+.model-book .book .button button {
+    padding: 0
+}
+
+.model-book .book .button button a {
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px 40px
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.login {
+    min-height: 90vh
+}
