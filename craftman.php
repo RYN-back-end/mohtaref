@@ -1,6 +1,8 @@
 <?php
 require 'helper.php';
-
+if (!isset($_SESSION)) {
+    session_start();
+}
 $selectCompaniesSql = "SELECT * FROM professionals";
 $selectCompaniesResult = runQuery($selectCompaniesSql);
 

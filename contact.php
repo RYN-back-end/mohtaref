@@ -1,5 +1,8 @@
 <?php
 require 'helper.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
 if (isset($_POST['name']))
 {
     $insertSql = "INSERT INTO conatct (`name`, email,whatsapp,message) Values ('{$_POST['name']}','{$_POST['email']}','{$_POST['whatsapp']}','{$_POST['massage']}')";

@@ -99,37 +99,39 @@ require_once 'layout/inc/header.php'
         <div class="row justify-center">
 
   
-<body> 
-  
+
   <div class="container ">
 
 
  <section class="">
  <div class="" id="container"> 
- <section class="ChooseAuth d-flex items-center justify-center"> 
+ <section class="ChooseAuth d-flex items-center justify-center" style="gap: 20px">
  <!-- box for admin --> 
- <div class="Box ml-14 relative text-center round-6">
- <img src="assets/img/admin.jpg" width="200" height="200" >
- <svg width="1em" height="1em" viewBox="0 0 60 60" data-icon="admin">  
+ <div class="Box ml-14 relative text-center round-6" style="position: relative ; height: 200px ;width: 226px;
+    text-align: center;">
+ <img src="assets/img/admin.jpg" width="200" height="200" style="height: 50%">
+<!-- <svg width="1em" height="1em" viewBox="0 0 60 60" data-icon="admin">  -->
  
- <p class="fw-500 fs-18 pt-5"> تسجيل دخول كمدير للنظام</p>
- </svg>
+ <p class="fw-500 fs-18 pt-5 " style="margin-top: 10vh"> تسجيل دخول كمدير للنظام</p>
+<!-- </svg>-->
  
- <a href="admin/login.php" title="admin/login.php" class="absolute"></a>
+ <a href="admin/login.php" title="admin/login.php" class="absolute" style="position: absolute"></a>
  </div> 
- <div class="Box relative text-center round-6"> 
- <img src="assets/img/craftman.jpg" width="500" height="500" >
- <svg width="1em" height="1em" viewBox="0 0 36 36" data-icon="client">  
- </svg> 
- <p class="fw-500 fs-18 pt-5">تسجيل دخول كحرفي</p>
- <a href="craftman/login.php" title="craftman/login.php" class="absolute"></a>
+ <div class="Box relative text-center round-6" style="position: relative ; height: 200px;width: 226px;
+    text-align: center;">
+ <img src="assets/img/craftman.jpg" width="500" height="500" style="height: 50%">
+<!-- <svg width="1em" height="1em" viewBox="0 0 36 36" data-icon="client">  -->
+<!-- </svg> -->
+ <p class="fw-500 fs-18 pt-5" style="margin-top: 10vh">تسجيل دخول كحرفي</p>
+ <a href="craftman/login.php" title="craftman/login.php" class="absolute" style="position: absolute"></a>
  </div> 
-  <div class="Box relative text-center round-6"  > 
-  <img src="assets/img/user.png" width="1456" height="700" >
- <svg width="1em" height="1em" viewBox="0 0 36 36" data-icon="client">  
- </svg> 
- <p class="fw-500 fs-18 pt-5">تسجيل دخول كمشتري</p>
- <a href="userlogin.php"  class="absolute"></a>
+  <div class="Box relative text-center round-6" style="position: relative ; height: 200px ; width: 226px;
+    text-align: center;" >
+  <img src="assets/img/user.png" width="1456" height="700" style="height: 50%">
+<!-- <svg width="1em" height="1em" viewBox="0 0 36 36" data-icon="client">  -->
+<!-- </svg> -->
+ <p class="fw-500 fs-18 pt-5" style="margin-top: 10vh">تسجيل دخول كمشتري</p>
+ <a href="userlogin.php"  class="absolute" style="position: absolute"></a>
  </div> 
  </section> </div> </section> 
  

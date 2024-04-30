@@ -18,7 +18,7 @@ $checkIfExistsRoomResult = runQuery($checkIfExistsRoomSql);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "professional";
+$database = "mohtaref";
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Check the connection

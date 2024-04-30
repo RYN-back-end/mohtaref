@@ -119,6 +119,11 @@ if (isset($_POST['name'])) {
             font-size: 16px;
             background-color: #54C7C3 !important;
             border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10vh auto;
+
         }
 
         #PayButton:hover {
@@ -173,6 +178,7 @@ if (isset($_POST['name'])) {
         label {
             color: #46545C;
             margin-bottom: 2px;
+            min-width: 100px;
         }
 
         .input-container {
@@ -286,6 +292,20 @@ if (isset($_POST['name'])) {
             border-color: #b0e5e3 !important;
             background-color: #EEF9F9 !important;
         }
+        .AE_pay input{
+            box-shadow: none !important;
+            width: 70%;
+            /* min-width: 60%; */
+            max-width: 100%;
+            height: 35px;
+            border-radius: 8px;
+        }
+        .AE_pay .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 5vh;
+        }
     </style>
     <script>
         $(function () {
@@ -306,7 +326,7 @@ if (isset($_POST['name'])) {
     </script>
 </head>
 <body>
-<div class="container">
+<div class="container AE_pay">
     <div id="Checkout" class="inline">
         <h1>دفع فاتورة</h1>
         <div class="card-row">
@@ -331,21 +351,27 @@ if (isset($_POST['name'])) {
                 <label for="CreditCardNumber">رقم البطاقة</label>
                 <input id="CreditCardNumber" name="number" class="null card-image form-control" required type="text"></input>
             </div>
-            <div class="expiry-date-group form-group">
-                <label for="ExpiryDate">تاريخ الإنتهاء </label>
-                <input id="ExpiryDate" class="form-control" type="text" name="valid_date" required placeholder="MM / YY" maxlength="7"></input>
-            </div>
-            <div class="security-code-group form-group">
-                <label for="SecurityCode">CVV</label>
-                <div class="input-container">
+            <div class="form-group">
+                <div class="small-group">
+                    <label for="ExpiryDate">تاريخ الإنتهاء </label>
+                    <input id="ExpiryDate" class="form-control" type="text" name="valid_date" required placeholder="MM / YY" maxlength="7"></input>
+                </div>
+                <div class="small-group">
+
+                    <label for="SecurityCode">CVV</label>
                     <input id="SecurityCode" class="form-control" required name="cvv" type="text"></input>
-                    <i id="cvc" class="fa fa-question-circle"></i>
-                </div>
-                <div class="cvc-preview-container two-card hide">
-                    <div class="amex-cvc-preview"></div>
-                    <div class="visa-mc-dis-cvc-preview"></div>
+<!--                    <div class="input-container">-->
+<!--                        -->
+<!--                        <i id="cvc" class="fa fa-question-circle"></i>-->
+<!--                    </div>-->
+<!--                    <div class="cvc-preview-container two-card hide">-->
+<!--                        <div class="amex-cvc-preview"></div>-->
+<!--                        <div class="visa-mc-dis-cvc-preview"></div>-->
+<!--                    </div>-->
                 </div>
             </div>
+
+
             <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
                 <span class="submit-button-lock"></span>
                 <span class="align-middle">دفع <?php echo $selectCartsResult['total_price']?> ر.س </span>

@@ -135,9 +135,28 @@ require_once 'layout/inc/header.php'
             ?>
             </tbody>
         </table>
-        <div class="row" style="justify-content: center;margin-top: 20px">
-            <button class="success edit-btn" style="color:white;width: 80px;height:30px;background-color: #B09474;-webkit-transition: .3s ease-out;transition: .3s ease-out;border-radius: 8px;border: none;" type="button">
-                <a href="payment.php" style="color: white">تأكيد</a>
+
+        <style>
+            .AE_table button{
+                background-color: transparent;
+            }
+            .AE_table button a{
+                color: #B09474 ;
+            }
+            .AE_table button:hover{
+                transform: scale(1.09);
+                background: #B09474;
+            }
+            .AE_table button:hover  a{
+                color: white;
+            }
+
+
+        </style>
+        <div class="row AE_table" style="justify-content: center;margin-top: 20px">
+
+            <button class="success edit-btn" style="color:white;-webkit-transition: .3s ease-out;transition: .3s ease-out;border-radius: 8px;border: 1px solid #B09474" type="button">
+                <a href="payment.php" style="    padding: 10px 25px; ">تأكيد</a>
             </button>
         </div>
     </div>

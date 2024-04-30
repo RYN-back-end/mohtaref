@@ -1,6 +1,9 @@
 
 <?php
 require 'helper.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
 $id =$_GET['id']??'';
 $selectCategorySql = "SELECT * FROM categories where id = '{$id}'";
 $selectCategoryRow = runQuery($selectCategorySql)->fetch_assoc();
