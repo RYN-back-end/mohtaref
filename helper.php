@@ -107,10 +107,8 @@ if (!function_exists('calculateAverageRating')) {
         // Check if there are any ratings for the product
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            // Return the average rating
-            return round($row['average_rating'], 1); // Round to one decimal place
+            return round($row['average_rating'], 1);
         } else {
-            // If there are no ratings for the product, return 0 as the default average rating
             return 0;
         }
     }

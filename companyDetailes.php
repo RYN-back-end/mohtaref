@@ -13,6 +13,19 @@ $myID = $_SESSION['user']['id']??'';
 $checkIfExistsRoomSql = "SELECT * FROM room where user_id = '{$myID}' AND professional_id ='{$_GET["id"]}'";
 $checkIfExistsRoomResult = runQuery($checkIfExistsRoomSql);
 */
+
+// Establish a database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "professional";
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +37,7 @@ $checkIfExistsRoomResult = runQuery($checkIfExistsRoomSql);
     <meta name="description" content="Information Technology">
     <title>موقع محترف</title>
     <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <?php
     require_once 'layout/assets/css.php'
     ?>
@@ -49,8 +63,8 @@ require_once 'layout/inc/header.php'
             <div class="col-6-md col-12-sm">
                 <div class="details"><p class="head"><?php echo $selectCompanyRow['title'] ?></p>
                     <p class="des"><?php echo $selectCompanyRow['pro_desc'] ?></p>
-					<p class="des"><?php echo $selectCompanyRow['address'] ?></p>
-                
+                    <p class="des"><?php echo $selectCompanyRow['address'] ?></p>
+
                 </div>
             </div>
             <div class="col-6-md col-12-sm">
@@ -58,7 +72,7 @@ require_once 'layout/inc/header.php'
                 <div class="img-gallery">
                     <div class="row gap-1">
 
-                      
+
 
                     </div>
                 </div>
@@ -66,14 +80,14 @@ require_once 'layout/inc/header.php'
         </div>
     </div>
 </section>
- <!-- <section class="model-book">
-    <div class="book"><p>تاكيد الحجز</p>
-        <div class="book-input"><label>موعد التسليم</label><input type="number" placeholder="20-1-2023"></div>
-        <div class="book-input"><label>الكمية المطلوبة</label><input type="number" placeholder="150"></div>
-        <div class="button">
-            <button type="button"><a href="chat.php">تاكيد</a></button>
-        </div>
-    </div>
+<!-- <section class="model-book">
+   <div class="book"><p>تاكيد الحجز</p>
+       <div class="book-input"><label>موعد التسليم</label><input type="number" placeholder="20-1-2023"></div>
+       <div class="book-input"><label>الكمية المطلوبة</label><input type="number" placeholder="150"></div>
+       <div class="button">
+           <button type="button"><a href="chat.php">تاكيد</a></button>
+       </div>
+   </div>
 </section> -->
 <section class="some-products">
     <div class="container">
@@ -88,7 +102,7 @@ require_once 'layout/inc/header.php'
                             <div class="company-img"><img src="<?php echo $row['banner']?>" alt="company-img"></div>
                             <div class="details-company">
                                 <p class="name"><?php echo $row['title']?></p>
-                                
+
                             </div>
                             <div class="details-company">
                                 <span class="name">
@@ -96,11 +110,33 @@ require_once 'layout/inc/header.php'
                                     <?php echo $row['price']?>
                                     ر.س
                                 </span>
-								
+                                <p class="name">
+                                    <?php
+                                    $averageRating = calculateAverageRating($conn, $row['id']);
+                                    $stars = floor($averageRating);
+                                    $halfStar = $averageRating - $stars > 0.5;
+
+                                    // Display full stars
+                                    for ($i = 0; $i < $stars; $i++) {
+                                        echo '<i class="fas fa-star"></i>';
+                                    }
+
+                                    if ($halfStar) {
+                                        echo '<i class="fas fa-star-half-alt"></i>';
+                                        $stars++;
+                                    }
+
+                                    for ($i = $stars; $i < 5; $i++) {
+                                        echo '<i class="far fa-star"></i>';
+                                    }
+
+                                    echo " ($averageRating)";
+                                    ?>
+                                </p>
                             </div>
-							<div class="details-company">
-							<button type="button"><a href="productDetailes.php?id=<?php echo $row['id']?>">تفاصيل </a></button>
-							</div>
+                            <div class="details-company">
+                                <button type="button"><a href="productDetailes.php?id=<?php echo $row['id']?>">تفاصيل </a></button>
+                            </div>
                         </div>
                     </div>
                     <?php
