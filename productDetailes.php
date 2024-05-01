@@ -32,6 +32,21 @@ if (isset($_POST['qty'])) {
     die();
 }
 
+$selectIfRated = true;
+$selectIfOrdered = false;
+if (isset($_SESSION['user']['loggedin'])) {
+    $selectIfRatedSql = "SELECT * FROM rating WHERE `user_id` = '{$_SESSION['user']['id']}' AND `product_id` = '{$_GET['id']}'";
+
+    if (runQuery($selectIfRatedSql)->num_rows == 0) {
+        $selectIfRated = false;
+    }
+    $selectIfOrderedSql = "SELECT order_details.product_id, order_details.status, orders.user_id FROM orders INNER JOIN order_details ON orders.id = order_details.order_id WHERE orders.user_id = '{$_SESSION['user']['id']}' AND order_details.status = 'ended'AND order_details.product_id = '{$_GET['id']}'";
+    if (runQuery($selectIfOrderedSql)->num_rows > 0) {
+        $selectIfOrdered = true;
+    }
+}
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -226,7 +241,7 @@ require_once 'layout/inc/header.php'
                 </section>
                 <?php
                 // Check if the user is logged in
-                if (isset($_SESSION['user']['loggedin']) && $_SESSION['user']['loggedin']) {
+                if (isset($_SESSION['user']['loggedin']) && $_SESSION['user']['loggedin'] && !$selectIfRated && $selectIfOrdered) {
                     ?>
                     <section class="add-review">
                         <div class="container">

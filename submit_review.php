@@ -1,6 +1,7 @@
 <?php
 // Include necessary dependencies
 require 'helper.php'; // Include your helper functions or database connection script
+checkLogin();
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the user is logged in
